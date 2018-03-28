@@ -1,0 +1,10 @@
+media_player:
+  - platform: mediaroom
+    host: !secret ip_box
+    name: Living Room STB
+  - platform: panasonic_viera
+    host: !secret ip_bedroom_tv
+  - platform: samsungtv
+    host: !secret ip_living_room_tv
+  - platform: webostv
+    host: !secret ip_mateus_tv

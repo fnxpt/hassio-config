@@ -1,0 +1,170 @@
+hall:
+  view: yes
+  name: Hall
+  icon: mdi:home
+  entities:
+    - group.my_gateway
+    - binary_sensor.door_window_sensor_158d0001ab3ef9
+    - sensor.illumination_34ce00fa67c5
+    - binary_sensor.illumination_158d0001a3e334
+    - binary_sensor.motion_sensor_158d0001a3e334
+    - sensor.illumination_158d0001a3e334
+    - light.gateway_light_34ce00fa67c5
+    - switch.wall_switch_left_158d0001a659d6
+    - switch.wall_switch_right_158d0001a659d6
+
+bedroom:
+  view: yes
+  name: Bedroom
+  icon: mdi:hotel
+  entities:
+    - media_player.unnamed_device
+    - sensor.temperature_158d0001d36ac7
+    - sensor.humidity_158d0001d36ac7
+    - sensor.pressure_158d0001d36ac7
+    - switch.wall_switch_left_158d0001715478
+    - switch.wall_switch_right_158d0001715478
+
+mateus_bedroom:
+  view: yes
+  name: Mateus Bedroom
+  icon: mdi:castle
+  entities:
+    - media_player.mateus_tv
+    - binary_sensor.switch_158d0001a6751a
+    - sensor.temperature_158d0001d6f89d
+    - sensor.humidity_158d0001d6f89d
+    - sensor.pressure_158d0001d6f89d
+    - binary_sensor.door_window_sensor_158d0001ab6e05
+
+felipe_bedroom:
+  view: yes
+  name: Felipe Bedroom
+  icon: mdi:baby-buggy
+  entities:
+    - sensor.temperature_158d0001d36a4d
+    - sensor.humidity_158d0001d36a4d
+    - sensor.pressure_158d0001d36a4d
+    - switch.wall_switch_left_158d000171558d
+    - switch.wall_switch_right_158d000171558d
+
+kitchen:
+  view: yes
+  name: Kitchen
+  icon: mdi:fridge
+  entities:
+    - binary_sensor.smoke_sensor_158d0001d84137
+
+living_room:
+  view: yes
+  name: Living Room
+  icon: mdi:theater
+  entities:
+    - media_player.samsung_ue42f5500
+    - sensor.temperature_158d0001d6be0a
+    - sensor.humidity_158d0001d6be0a
+    - sensor.pressure_158d0001d6be0a
+    - media_player.living_room
+
+family:
+  name: Family
+  entities:
+    - device_tracker.marlonsiphonelocal
+    - device_tracker.iphonedcquelinelocal
+
+guests:
+  name: Guests
+  entities:
+    - device_tracker.iphonedeelzalocal
+
+info:
+  name: Info
+  entities:
+    - sun.sun
+    - sensor.yweather_current
+    - sensor.yweather_temperature
+    - sensor.yweather_temperature_max
+    - sensor.yweather_temperature_min
+
+network:
+  name: Network
+  icon: mdi:network
+  entities:
+    - sensor.pihole_domains_blocked
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_ads_blocked_today
+
+energy:
+  name: Energy
+  icon: mdi:flash
+  entities:
+    - sensor.house
+    - sensor.mateus_bedroom
+    - sensor.hoven
+    - sensor.fridge
+    - sensor.bench
+
+temperature:
+  name: Temperature
+  icon: mdi:temperature-celsius
+  entities:
+    - sensor.temperature_158d0001d6be0a
+    - sensor.temperature_158d0001d6f89d
+    - sensor.temperature_158d0001d36a4d
+    - sensor.temperature_158d0001d36ac7
+
+humidity:
+  name: Humidity
+  icon: mdi:water-percent
+  entities:
+    - sensor.humidity_158d0001d6be0a
+    - sensor.humidity_158d0001d6f89d
+    - sensor.humidity_158d0001d36a4d
+    - sensor.humidity_158d0001d36ac7
+
+pressure:
+  name: Pressure
+  entities:
+    - sensor.pressure_158d0001d6be0a
+    - sensor.pressure_158d0001d6f89d
+    - sensor.pressure_158d0001d36a4d
+    - sensor.pressure_158d0001d36ac7
+
+doors:
+  name: Doors
+  icon: mdi:door
+  entities:
+    - binary_sensor.door_window_sensor_158d0001ab3ef9
+    - binary_sensor.door_window_sensor_158d0001ab6e05
+
+switches:
+  name: Switches
+  entities:
+    - binary_sensor.switch_158d0001a6751a
+    - binary_sensor.switch_158d0001b8f8e9
+    - binary_sensor.switch_158d0001b8f98c
+
+lights_switches:
+  name: Lights
+  icon: mdi:lightbulb-on
+  entities:
+    - sensor.illumination_34ce00fa67c5
+    - sensor.illumination_158d0001a3e334
+    - light.gateway_light_hall
+    - binary_sensor.motion_sensor_158d0001a3e334
+    - switch.wall_switch_left_158d0001715478
+    - switch.wall_switch_right_158d0001715478
+    - switch.wall_switch_left_158d000171558d
+    - switch.wall_switch_right_158d000171558d
+    - switch.wall_switch_left_158d0001a659d6
+    - switch.wall_switch_right_158d0001a659d6
+    - switch.wall_switch_left_158d000171543b
+    - switch.wall_switch_rigth_158d000171543b
+    - switch.wall_switch_left_158d0001660c72
+    - switch.wall_switch_right_158d0001660c72
+
+alarms:
+  name: Alarms
+  icon: mdi:alarm
+  entities:
+    - binary_sensor.smoke_sensor_158d0001d84137

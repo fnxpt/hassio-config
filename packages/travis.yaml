@@ -1,0 +1,5 @@
+sensor:
+  - platform: travisci
+    api_key: !secret travis_key
+    monitored_conditions:
+      - last_build_state

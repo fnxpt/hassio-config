@@ -1,0 +1,7 @@
+switch:
+  - platform: broadlink
+    host: !secret ip_broadlink_1
+    mac: !secret broadlink_1_mac
+  - platform: broadlink
+    host: !secret ip_broadlink_2
+    mac: !secret broadlink_2_mac

@@ -1,0 +1,52 @@
+script:
+  turn_on_fireplace:
+    alias: Turn On fireplace
+    sequence:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.fireplace
+      - service: switch.broadlink_send_packet_10_2_250_220
+        data:
+          packet:
+            - "JgBYAAABKpMRFBEVEBUQFRITERUQFRAVETkTNhM3EzcTNhM3ETkQOREVEBUQOhA5EhQQFRAVEDoQORM3ExIRFBE5ETkQORIUEAAFJQABKUsRAAxcAAEnTRIADQU="
+            - "JgBQAAABKJURFBAVERUQFRAVEBURFBEVEDkSOBI4ETgSOBI4ETgSOBITERQRORITERUQFRAVETkROBI4ERQRORI4ETgSOBEUEAAFJQABJ00RAA0FAAAAAAAAAAA="
+  turn_off_fireplace:
+    alias: Turn Off fireplace
+    sequence:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.fireplace
+      - service: switch.broadlink_send_packet_10_2_250_220
+        data:
+          packet:
+            - "JgBYAAABKpMRFBEVEBUQFRITERUQFRAVETkTNhM3EzcTNhM3ETkQOREVEBUQOhA5EhQQFRAVEDoQORM3ExIRFBE5ETkQORIUEAAFJQABKUsRAAxcAAEnTRIADQU="
+  toggle_felipe_tv:
+    alias: Toggle Felipe Tv
+    sequence:
+      - service: input_boolean.toggle
+        entity_id: input_boolean.felipe_tv
+      - service: switch.broadlink_send_packet_10_2_250_218
+        data:
+          packet:
+            - "JgA0ABodNxwbHRodGxwbHRodGh0bNxsdNh0bAAr4Gh03HRodGh0bHBsdGh0aHRs3Gx02HRsADQUAAAAA"
+  change_felipe_tv_5:
+    alias: Change Felipe Tv channel to 5
+    sequence:
+      - service: switch.broadlink_send_packet_10_2_250_218
+        data:
+          packet:
+            - "JgBoABscGx02HRscGx0aHRscGx0aHRo4NzgaAArdGxwbHTYdGx0aHRodGxwbHRodGjg3OBoACt0bHBsdNh0bHBsdGh0aHRscGx0aODc3GwAK3RodGxw3HRodGxwbHRodGh0bHBs4NjgbAA0F"
+  change_felipe_tv_23:
+    alias: Change Felipe Tv channel to 23
+    sequence:
+      - service: switch.broadlink_send_packet_10_2_250_218
+        data:
+          packet:
+            - "JgBOABodNh0bHRodGh0bHBsdGh0bHBsdGjg2AAr5Gxw3HRodGxwbHRodGh0bHBsdGh0aODcACvgbHDcdGxwbHRodGh0bHBsdGh0aHRs3NwANBQAAAAAAAAAAAAA"
+            - "JgBUABsdGh02HRsdGh0aHRscGx0aHRodGzcbHRoACt4aHRodNx0aHRodGxwbHRodGh0bHBs4Gh0aAAreGh0bHDcdGh0bHBsdGh0aHRscGx0aOBodGwANBQAAAAA"
+  change_felipe_tv_volume:
+    alias: Change Felipe Tv volume
+    sequence:
+      - service: switch.broadlink_send_packet_10_2_250_218
+        data:
+          packet:
+            - "JgBOAB0aHRs5Gh0bHBsdGh0aHTY5Gh0bHDYdAAraHRscGzkbHBsdGh0aHRscNjkbHBsdNR0ACtscGx0aORsdGh0aHRscGx01ORsdGh01HQANBQAAAAAAAAAAAAA="
+            - "JgBoABsdNh0bHRodGh0bHBsdGjg3HRodGh0bAAr4Gh03HRodGh0bHBsdGh0aODcdGh0bHBsACvgaHTcdGh0aHRsdGh0aHRs3Nx0aHRsdGgAK+B0aORsdGh0aHRscGx0aHTU5Gx0aHRscAA0F"

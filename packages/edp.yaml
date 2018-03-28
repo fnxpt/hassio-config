@@ -1,0 +1,4 @@
+sensor:
+  - platform: edp_redy_local
+    host: !secret ip_edp
+    update_interval: 10

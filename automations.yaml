@@ -1,0 +1,216 @@
+#Ligar a luz quando não há luz e quando um device tiver entrado na rede a menos de 5m
+#Desligar todas as luzes e equipamentos após saída de casa
+
+- alias: 'Turn presence light on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.illumination_34ce00fa67c5
+    below: 50
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
+    - condition: time
+      after: '22:00:00'
+      before: '06:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.gateway_light_34ce00fa67c5
+
+- alias: 'Turn presence light off'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.illumination_34ce00fa67c5
+    above: 50
+  condition:
+    - condition: state
+      entity_id: light.gateway_light_34ce00fa67c5
+      state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.gateway_light_34ce00fa67c5
+
+- alias: 'Alarm triggered'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'not_home'
+  action:
+    - service: notify.ios
+      data:
+        title: "Security"
+        message: "Alarm triggered you are being robbed"
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: 34ce00fa67c5
+        ringtone_id: 0
+        ringtone_vol: 8
+
+- alias: 'Toggle Lights from switch'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a6751a
+      click_type: single
+  action:
+    - service: light.toggle
+      data:
+        entity_id: light.gateway_light_34ce00fa67c5
+    - service: notify.ios
+      data:
+        title: "Security"
+        message: "Toggle lights"
+
+- alias: 'Turn TV off'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a6751a
+      click_type: double
+  condition:
+    - condition: state
+      entity_id: media_player.mateus_tv
+      state: 'on'
+  action:
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.mateus_tv
+
+- alias: 'Toggle toilet light'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001b8f98c
+      click_type: single
+  action:
+    - service: switch.toggle
+      entity_id: switch.wall_switch_right_158d000171543b
+
+- alias: 'Toggle Lights from switch'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001b8f8e9
+      click_type: single
+  action:
+    - service: notify.ios
+      data:
+        title: "Security"
+        message: "Button 2"
+
+- alias: 'Fire Notification'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.smoke_sensor_158d0001d84137
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.ios
+      data:
+        title: "Fire"
+        message: "Fire, fire, fire"
+
+- alias: 'Alert door open'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  action:
+    - service: notify.ios
+      data:
+        title: "Door opened"
+        message: "You left entrance door opened"
+
+- alias: 'Turn on fireplace'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_158d0001d6be0a
+      below: 10
+    # - platform: state
+    #   entity_id: media_player.samsung_tv_remote
+    #   from: 'off'
+    #   to: 'on'
+  condition:
+    # - condition: state
+    #   entity_id: input_boolean.fireplace
+    #   state: 'off'
+    # - condition: numeric_state
+    #   entity_id: sensor.temperature_158d0001d6be0a
+    #   below: 10
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
+    # - condition: state
+    #   entity_id: media_player.samsung_tv_remote
+    #   state: 'on'
+  action:
+    - service: script.turn_on_fireplace
+
+- alias: 'Turn off fireplace'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_158d0001d6be0a
+      above: 20
+    - platform: state
+      entity_id: media_player.samsung_tv_remote
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_boolean.fireplace
+      state: 'on'
+  action:
+    - service: script.turn_off_fireplace
+
+- alias: 'Turn off outside lamp'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: switch.wall_switch_right_158d0001a659d6
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  condition:
+    - condition: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      state: 'off'
+    - condition: state
+      entity_id: switch.wall_switch_right_158d0001a659d6
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d0001a659d6
+
+- alias: 'Turn on Felipe Tv'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_158d0001d6be0a
+      below: 10
+    # - platform: state
+    #   entity_id: media_player.samsung_tv_remote
+    #   from: 'off'
+    #   to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.felipe_tv
+      state: 'off'
+  action:
+    - service: script.toggle_felipe_tv
