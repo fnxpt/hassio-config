@@ -170,9 +170,9 @@
       from: 'on'
       to: 'off'
   condition:
-    - condition: state
-      entity_id: input_boolean.fireplace
-      state: 'on'
+    # - condition: state
+    #   entity_id: input_boolean.fireplace
+    #   state: 'on'
   action:
     - service: script.turn_off_fireplace
 
@@ -199,18 +199,17 @@
     - service: switch.turn_off
       entity_id: switch.wall_switch_right_158d0001a659d6
 
-- alias: 'Turn on Felipe Tv'
+- alias: 'Toggle Felipe Tv'
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.temperature_158d0001d6be0a
-      below: 10
-    # - platform: state
-    #   entity_id: media_player.samsung_tv_remote
-    #   from: 'off'
-    #   to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.felipe_tv
-      state: 'off'
+    - platform: state
+      entity_id: switch.wall_switch_left_158d0001a659ee
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: switch.wall_switch_left_158d0001a659ee
+      from: 'on'
+      to: 'off'
   action:
     - service: script.toggle_felipe_tv
+    - delay: 0:20
+    - service: script.change_felipe_tv_23

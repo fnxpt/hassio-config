@@ -1,0 +1,9 @@
+input_boolean:
+  fireplace:
+    name: Fireplace
+    initial: off
+    icon: mdi:fire
+  felipe_tv:
+    name: Felipe TV
+    initial: off
+    icon: mdi:tv

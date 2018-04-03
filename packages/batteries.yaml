@@ -1,0 +1,267 @@
+homeassistant:
+  customize:
+    input_boolean.battery_notifications:
+      custom_ui_state_card: state-card-custom-ui
+      show_last_changed: true
+
+group:
+  Batteries Status:
+    name: Batteries
+    control: hidden
+    entities:
+      - sensor.bat_living_room_temp
+      - sensor.bat_bedroom_temp
+      - sensor.bat_mateus_temp
+      - sensor.bat_felipe_temp
+      - sensor.bat_motion_hall
+      - sensor.bat_entrance_door
+      - sensor.bat_balcony_door
+      - sensor.bat_smoke_detector
+      - sensor.bat_mateus_bed_button
+      - sensor.bat_toilet_button
+      - sensor.bat_extra_button
+
+sensor:
+  platform: template
+  sensors:
+    bat_living_room_temp:
+      friendly_name: Living room sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.sensor.temperature_158d0001d6be0a.attributes.battery_level %}
+          {{ states.sensor.temperature_158d0001d6be0a.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_living_room_temp.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_living_room_temp.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_bedroom_temp:
+      friendly_name: Bedroom sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.sensor.temperature_158d0001d36ac7.attributes.battery_level %}
+          {{ states.sensor.temperature_158d0001d36ac7.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_bedroom_temp.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_bedroom_temp.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_mateus_temp:
+      friendly_name: Mateus bedroom sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.sensor.temperature_158d0001d6f89d.attributes.battery_level %}
+          {{ states.sensor.temperature_158d0001d6f89d.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_mateus_temp.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_mateus_temp.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_felipe_temp:
+      friendly_name: Felipe bedroom sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.sensor.temperature_158d0001d36a4d.attributes.battery_level %}
+          {{ states.sensor.temperature_158d0001d36a4d.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_felipe_temp.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_felipe_temp.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_motion_hall:
+      friendly_name: Motion Hall sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.motion_sensor_158d0001a3e334.attributes.battery_level %}
+          {{ states.binary_sensor.motion_sensor_158d0001a3e334.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_motion_hall.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_motion_hall.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_entrance_door:
+      friendly_name: Entrance door sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.door_window_sensor_158d0001ab3ef9.attributes.battery_level %}
+          {{ states.binary_sensor.door_window_sensor_158d0001ab3ef9.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_entrance_door.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_entrance_door.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_balcony_door:
+      friendly_name: Balcony door sensor battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.door_window_sensor_158d0001ab6e05.attributes.battery_level %}
+          {{ states.binary_sensor.door_window_sensor_158d0001ab6e05.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_balcony_door.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_balcony_door.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_smoke_detector:
+      friendly_name: Smoke detector battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.smoke_sensor_158d0001d84137.attributes.battery_level %}
+          {{ states.binary_sensor.smoke_sensor_158d0001d84137.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_smoke_detector.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_smoke_detector.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_mateus_bed_button:
+      friendly_name: Mateus bed button battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.switch_158d0001a6751a.attributes.battery_level %}
+          {{ states.binary_sensor.switch_158d0001a6751a.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_mateus_bed_button.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_mateus_bed_button.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_toilet_button:
+      friendly_name: Toilet button battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.switch_158d0001b8f8e9.attributes.battery_level %}
+          {{ states.binary_sensor.switch_158d0001b8f8e9.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_toilet_button.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_toilet_button.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    bat_extra_button:
+      friendly_name: Extra button battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.binary_sensor.switch_158d0001b8f98c.attributes.battery_level %}
+          {{ states.binary_sensor.switch_158d0001b8f98c.attributes.battery_level|round }}
+        {% else %}
+          {{ states.sensor.bat_extra_button.state }}
+        {%- endif %}
+      icon_template: >
+        {% set battery_level = states.sensor.bat_extra_button.state|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+
+input_boolean:
+  battery_notifications:
+    name: Notifications
+    initial: on
+    icon: mdi:battery-charging-wireless
+
+automation:
+  - alias: Battery replacement alert
+    initial_state: true
+    trigger:
+      platform: numeric_state
+      entity_id:
+        - sensor.bat_living_room_temp
+        - sensor.bat_bedroom_temp
+        - sensor.bat_mateus_temp
+        - sensor.bat_felipe_temp
+        - sensor.bat_motion_hall
+        - sensor.bat_entrance_door
+        - sensor.bat_balcony_door
+        - sensor.bat_smoke_detector
+        - sensor.bat_mateus_bed_button
+        - sensor.bat_toilet_button
+        - sensor.bat_extra_button
+      below: 10
+    condition:
+      - condition: template
+        value_template: '{{ states.input_boolean.battery_notifications.state == "on" }}'
+    action:
+      - service: notify.ios
+        data_template:
+          message: 'Alert! {{ trigger.from_state.attributes.friendly_name }} needs to be replaced ({{ trigger.from_state.state }}%)!'

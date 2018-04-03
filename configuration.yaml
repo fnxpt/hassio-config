@@ -22,7 +22,7 @@ http:
 #zone: !include zones.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
-script: !include_dir_named scripts
+script: !include scripts.yaml
 frontend:
 config:
 updater:
@@ -31,6 +31,7 @@ conversation:
 history:
 logbook:
 sun:
+ios:
 #cloud: !include cloud.yaml
 wake_on_lan: # enables `wake_on_lan` domain
 

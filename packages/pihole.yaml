@@ -1,6 +1,6 @@
 sensor:
   - platform: pi_hole
     monitored_conditions:
-      - pihole_domains_blocked
-      - pihole_dns_queries_today
-      - pihole_ads_blocked_today
+      - domains_being_blocked
+      - dns_queries_today
+      - ads_blocked_today

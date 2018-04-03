@@ -1,3 +1,5 @@
 .DS_Store
 DS_Store
+www/
+known_devices.yaml
 secrets.yaml

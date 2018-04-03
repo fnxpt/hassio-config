@@ -1,2 +1,1 @@
 homekit:
-  pincode: !secret homekit_pin

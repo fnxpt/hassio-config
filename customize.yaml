@@ -1,0 +1,152 @@
+media_player.samsung_ue42f5500:
+  friendly_name: Living room TV
+  homebridge_visible: true
+  homebridge_name: TV
+media_player.panasonic_viera_tv:
+  friendly_name: Bedroom TV
+  homebridge_visible: true
+  homebridge_name: TV
+media_player.mateus_tv:
+  friendly_name: Mateus TV
+  homebridge_visible: true
+  homebridge_name: TV
+binary_sensor.smoke_sensor_158d0001d84137:
+  friendly_name: Fire Alarm
+binary_sensor.switch_158d0001a6751a:
+  friendly_name: Bed Switch
+binary_sensor.switch_158d0001b8f8e9:
+  friendly_name: Felipe Toilet Switch
+binary_sensor.switch_158d0001b8f98c:
+  friendly_name: X2 Switch
+sensor.temperature_158d0001d6be0a:
+  friendly_name: Temperature Living Room
+  homebridge_visible: true
+  homebridge_name: Temperature
+sensor.temperature_158d0001d6f89d:
+  friendly_name: Temperature Mateus
+  homebridge_visible: true
+  homebridge_name: Temperature
+sensor.temperature_158d0001d36a4d:
+  friendly_name: Temperature Felipe
+  homebridge_visible: true
+  homebridge_name: Temperature
+sensor.temperature_158d0001d36ac7:
+  friendly_name: Temperature Bedroom
+  homebridge_visible: true
+  homebridge_name: Temperature
+sensor.pressure_158d0001d6be0a:
+  friendly_name: Pressure Living Room
+sensor.pressure_158d0001d6f89d:
+  friendly_name: Pressure Mateus
+sensor.pressure_158d0001d36a4d:
+  friendly_name: Pressure Felipe
+sensor.pressure_158d0001d36ac7:
+  friendly_name: Pressure Bedroom
+sensor.humidity_158d0001d6be0a:
+  friendly_name: Humidity Living Room
+sensor.humidity_158d0001d6f89d:
+  friendly_name: Humidity Mateus
+sensor.humidity_158d0001d36a4d:
+  friendly_name: Humidity Felipe
+sensor.humidity_158d0001d36ac7:
+  friendly_name: Humidity Bedroom
+sensor.illumination_34ce00fa67c5:
+  friendly_name: Gateway
+binary_sensor.motion_sensor_158d0001a3e334:
+  friendly_name: Motion sensor
+sensor.illumination_158d0001a3e334:
+  friendly_name: Light sensor
+light.gateway_light_34ce00fa67c5:
+  friendly_name: Gateway
+binary_sensor.door_window_sensor_158d0001ab3ef9:
+  friendly_name: Entrance Door
+binary_sensor.door_window_sensor_158d0001ab6e05:
+  friendly_name: Balcony Door
+sensor.pihole_dns_unique_domains:
+  hidden: true
+sensor.pihole_dns_unique_clients:
+  hidden: true
+sensor.pihole_dns_queries_forwarded:
+  hidden: true
+sensor.pihole_dns_queries_cached:
+  hidden: true
+sensor.pihole_ads_percentage_blocked_today:
+  hidden: true
+sensor.weather_temperature:
+  friendly_name: Temperature Outside
+device_tracker.marlonsiphonelocal:
+  friendly_name: Marlon
+device_tracker.iphonedcquelinelocal:
+  friendly_name: Jacqueline
+device_tracker.iphonedeelzalocal:
+  friendly_name: Elza
+sensor.pihole_domains_blocked:
+  friendly_name: Domains Blocked
+sensor.pihole_ads_blocked_today:
+  friendly_name: Ads Blocked Today
+sensor.pihole_dns_queries_today:
+  friendly_name: DNS Queries Today
+sensor.transmission_active_torrents:
+  friendly_name: Active Torrents
+sensor.transmission_down_speed:
+  friendly_name: Torrents (Down)
+sensor.transmission_up_speed:
+  friendly_name: Torrents (Up)
+sensor.yweather_temperature_max:
+  friendly_name: Temperature (max)
+sensor.yweather_temperature:
+  friendly_name: Temperature
+sensor.yweather_current:
+  friendly_name: Current
+sensor.yweather_temperature_min:
+  friendly_name: Temperature (min)
+switch.wall_switch_left_158d0001715418:
+  friendly_name: Wall Switch Kitchen (Left)
+  alexa_name: Kitchen Light
+  homebridge_visible: true
+  homebridge_name: Kitchen Light
+switch.wall_switch_right_158d0001715418:
+  friendly_name: Wall Switch Kitchen (Right)
+  alexa_name: Kitchen Light
+  homebridge_visible: true
+  homebridge_name: Kitchen Light
+switch.wall_switch_left_158d0001715478:
+  friendly_name: Wall Switch Bedroom (Left)
+  alexa_name: Bedroom Light
+  homebridge_visible: true
+  homebridge_name: Light
+switch.wall_switch_left_158d000171543b:
+  friendly_name: Wall Switch Toilet (Left)
+  alexa_name: Toilet Mirror
+  homebridge_visible: true
+  homebridge_name: Toilet Mirror
+switch.wall_switch_right_158d000171543b:
+  friendly_name: Wall Switch Toilet (Right)
+  alexa_name: Toilet Light
+  homebridge_visible: true
+  homebridge_name: Toilet Light
+switch.wall_switch_left_158d0001660c72:
+  friendly_name: Wall Switch Living Room (Left)
+  alexa_name: Living Room LED
+  homebridge_visible: true
+  homebridge_name: Living Room LED
+switch.wall_switch_right_158d0001660c72:
+  friendly_name: Wall Switch Living Room (Right)
+  alexa_name: Living Room Light
+  homebridge_visible: true
+  homebridge_name: Living Room Light
+switch.wall_switch_right_158d0001715478:
+  friendly_name: Wall Switch Bedroom (Right)
+  alexa_name: Bedroom LED
+  homebridge_visible: true
+  homebridge_name: LED
+switch.wall_switch_left_158d0001a659ee:
+  friendly_name: Wall Switch Felipe (Left)
+switch.wall_switch_right_158d0001a659ee:
+  friendly_name: Wall Switch Felipe (Right)
+  alexa_name: Felipe's Light
+switch.wall_switch_left_158d0001a659d6:
+  friendly_name: Wall Switch Hall (Left)
+  alexa_name: Hall Light
+switch.wall_switch_right_158d0001a659d6:
+  friendly_name: Wall Switch Hall (Right)
