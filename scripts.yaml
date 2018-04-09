@@ -58,7 +58,7 @@ change_mateus_tv_volume:
       data:
         volume_level: 0.05
 turn_off_mateus_tv:
-  alias: Change Mateus Tv volume
+  alias: Turn off Mateus TV
   sequence:
     - service: media_player.turn_off
       entity_id: media_player.lg_webos_smart_tv

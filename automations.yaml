@@ -227,6 +227,7 @@
     at: '21:30:00'
   action:
     - service: script.change_mateus_tv_volume
+
 - alias: 'Bedtime Mateus 2'
   trigger:
     platform: time
