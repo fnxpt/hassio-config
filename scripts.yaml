@@ -38,7 +38,7 @@ change_felipe_tv_23:
       data:
         packet:
           - "JgBOABodNh0bHRodGh0bHBsdGh0bHBsdGjg2AAr5Gxw3HRodGxwbHRodGh0bHBsdGh0aODcACvgbHDcdGxwbHRodGh0bHBsdGh0aHRs3NwANBQAAAAAAAAAAAAA"
-    - delay: 0:00:02
+    - delay: 0:00:01
     - service: switch.broadlink_send_packet_10_2_250_218
       data:
         packet:
