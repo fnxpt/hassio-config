@@ -232,5 +232,4 @@
     platform: time
     at: '22:00:00'
   action:
-    - service: script.media_player.turn_off
-      entity_id: media_player.lg_webos_smart_tv
+    - service: script.turn_off_mateus_tv
