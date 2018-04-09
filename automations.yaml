@@ -213,3 +213,17 @@
     - service: script.toggle_felipe_tv
     - delay: 0:20
     - service: script.change_felipe_tv_23
+
+- alias: 'Bedtime Felipe'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  action:
+    - service: script.change_felipe_tv_5
+
+- alias: 'Bedtime Mateus'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  action:
+    - service: script.change_mateus_tv_volume
