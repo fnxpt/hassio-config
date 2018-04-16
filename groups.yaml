@@ -76,6 +76,7 @@ doors:
   entities:
     - binary_sensor.door_window_sensor_158d0001ab3ef9
     - binary_sensor.door_window_sensor_158d0001ab6e05
+    - binary_sensor.door_window_sensor_158d0001b7b043
 
 switches:
   name: Switches

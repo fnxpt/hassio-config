@@ -62,6 +62,8 @@ binary_sensor.door_window_sensor_158d0001ab3ef9:
   friendly_name: Entrance Door
 binary_sensor.door_window_sensor_158d0001ab6e05:
   friendly_name: Balcony Door
+binary_sensor.door_window_sensor_158d0001b7b043:
+  friendly_name: Store Room Door
 sensor.pihole_dns_unique_domains:
   hidden: true
 sensor.pihole_dns_unique_clients:
