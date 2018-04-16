@@ -43,7 +43,7 @@
       entity_id: group.all_devices
       state: 'not_home'
   action:
-    - service: notify.ios
+    - service: notify.family
       data:
         title: "Security"
         message: "Alarm triggered you are being robbed"
@@ -61,13 +61,8 @@
       entity_id: binary_sensor.switch_158d0001a6751a
       click_type: single
   action:
-    - service: light.toggle
-      data:
-        entity_id: light.gateway_light_34ce00fa67c5
-    - service: notify.ios
-      data:
-        title: "Security"
-        message: "Toggle lights"
+    - service: switch.toggle
+      entity_id: switch.wall_switch_right_158d0001715418
 
 - alias: 'Turn TV off'
   trigger:
@@ -76,14 +71,10 @@
     event_data:
       entity_id: binary_sensor.switch_158d0001a6751a
       click_type: double
-  condition:
-    - condition: state
-      entity_id: media_player.mateus_tv
-      state: 'on'
   action:
     - service: media_player.turn_off
       data:
-        entity_id: media_player.mateus_tv
+        entity_id: media_player.lg_webos_smart_tv
 
 - alias: 'Toggle toilet light'
   trigger:
@@ -104,7 +95,7 @@
       entity_id: binary_sensor.switch_158d0001b8f8e9
       click_type: single
   action:
-    - service: notify.ios
+    - service: notify.family
       data:
         title: "Security"
         message: "Button 2"
@@ -116,7 +107,7 @@
     from: 'off'
     to: 'on'
   action:
-    - service: notify.ios
+    - service: notify.family
       data:
         title: "Fire"
         message: "Fire, fire, fire"
@@ -130,7 +121,7 @@
       for:
         seconds: 30
   action:
-    - service: notify.ios
+    - service: notify.family
       data:
         title: "Door opened"
         message: "You left entrance door opened"
