@@ -239,3 +239,23 @@
   action:
     - service: switch.toggle
       entity_id: switch.wall_switch_right_158d0001715418
+
+- alias: 'Create daily snapshot'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: Automated Backup {{ now().strftime('%Y-%m-%d') }}
+
+- alias: 'Backup snapshots'
+  trigger:
+    platform: time
+    at: '00:30:00'
+  action:
+    - service: hassio.addon_stdin
+      data:
+        addon: 7be23ff5_dropbox_sync
+        input:
+            command: upload
