@@ -1,0 +1,9 @@
+sensor:
+  - platform: waze_travel_time
+    origin: !secret home_coordinates
+    destination: !secret work_coordinates
+    region: 'EU'
+  - platform: waze_travel_time
+    origin: !secret home_coordinates
+    destination: !secret kids_school_coordinates
+    region: 'EU'
