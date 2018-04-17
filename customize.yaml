@@ -152,3 +152,7 @@ switch.wall_switch_left_158d0001a659d6:
   alexa_name: Hall Light
 switch.wall_switch_right_158d0001a659d6:
   friendly_name: Wall Switch Hall (Right)
+sensor.waze_travel_time:
+    friendly_name: Work
+sensor.waze_travel_time_2:
+    friendly_name: Kids School

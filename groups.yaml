@@ -9,6 +9,12 @@ guests:
   entities:
     - device_tracker.iphonedeelzalocal
 
+travels:
+  name: Travels
+  entities:
+    - sensor.waze_travel_time
+    - sensor.waze_travel_time_2
+
 info:
   name: Info
   entities:
