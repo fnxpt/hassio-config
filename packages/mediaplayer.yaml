@@ -8,3 +8,8 @@ media_player:
     host: !secret ip_living_room_tv
   - platform: webostv
     host: !secret ip_mateus_tv
+
+notify:
+  - platform: webostv
+    host: !secret ip_mateus_tv
+    name: lg_webos_smart_tv
