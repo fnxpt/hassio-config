@@ -11,8 +11,6 @@ default_view:
       - group.travis
       - group.energy
 
-
-
 lights_view:
   view: yes
   icon: mdi:lightbulb
@@ -23,8 +21,12 @@ media_view:
   view: yes
   icon: mdi:television
   entities:
-    - group.lights_switches
-
+    - media_player.samsung_ue42f5500
+    - media_player.mediaroom_none
+    - media_player.panasonic_viera_tv
+    - media_player.apple_tv
+    - media_player.lg_webos_smart_tv
+    
 other_view:
   view: yes
   icon: mdi:video-input-component
