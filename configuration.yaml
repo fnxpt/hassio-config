@@ -12,6 +12,12 @@ homeassistant:
   time_zone: Europe/Lisbon
   # Customization file
   customize: !include customize.yaml
+  customize_glob:
+    input_boolean.weather:
+        custom_ui_state_card: custom-weather-card
+        config:
+          weather: weather.yweather
+          sun: sun.sun
   packages: !include_dir_named packages
 
 http:
