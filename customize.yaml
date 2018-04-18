@@ -156,3 +156,9 @@ sensor.waze_travel_time:
     friendly_name: Work
 sensor.waze_travel_time_2:
     friendly_name: Kids School
+sensor.fnxptcitiestest_last_build_state:
+  friendly_name: Cities Sample
+sensor.fnxptopenweathertest_last_build_state:
+  friendly_name: OpenWeather Sample
+sensor.fnxpttradetest_last_build_state:
+  friendly_name: Trade Sample
