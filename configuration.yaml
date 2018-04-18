@@ -30,7 +30,6 @@ discovery:
 conversation:
 history:
 logbook:
-sun:
 ios:
 #cloud: !include cloud.yaml
 wake_on_lan: # enables `wake_on_lan` domain
