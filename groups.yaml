@@ -2,6 +2,7 @@ default_view:
     view: yes
     entities:
       - group.weather
+      - group.weather_amsterdam
       - group.family
       - group.guests
       - group.travels
@@ -13,11 +14,16 @@ default_view:
       - group.doors
       - group.switches
       - group.lights_switches
-      
+
 weather:
   name: Lisbon
   entities:
     - input_boolean.weather
+
+weather_amsterdam:
+  name: Amsterdam
+  entities:
+    - input_boolean.weather_amsterdam
 
 family:
   name: Family

@@ -18,6 +18,13 @@ homeassistant:
         config:
           weather: weather.yweather
           sun: sun.sun
+    input_boolean.weather_amsterdam:
+        custom_ui_state_card: custom-weather-card
+        config:
+          weather: weather.buienradar
+          sun: sun.sun
+
+
   packages: !include_dir_named packages
 
 http:

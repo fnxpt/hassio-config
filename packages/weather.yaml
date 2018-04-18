@@ -1,14 +1,15 @@
 input_boolean:
   weather:
+  weather_amsterdam:
 
 weather:
   - platform: yweather
     woeid: 742676
-  # - platform: buienradar
-  #   name: Amsterdam
-  #   latitude: !secret amsterdam_home_latitude
-  #   longitude: !secret amsterdam_home_longitude
-  #   forecast: True
+  - platform: buienradar
+    name: Amsterdam
+    latitude: 52.379189 # !secret amsterdam_home_latitude
+    longitude: 4.899431 # !secret amsterdam_home_longitude
+    forecast: True
 
 sensor:
   - platform: yweather
@@ -22,10 +23,10 @@ sensor:
       - visibility
       - humidity
       - temperature
-  # - platform: buienradar
-  #   monitored_conditions:
-  #     - symbol
-  #     - humidity
-  #     - temperature
-  #     - windspeed
-  #     - pressure
+  - platform: buienradar
+    monitored_conditions:
+      - symbol
+      - humidity
+      - temperature
+      - windspeed
+      - pressure
