@@ -1,3 +1,19 @@
+default_view:
+    view: yes
+    entities:
+      - group.weather
+      - group.family
+      - group.guests
+      - group.travels
+      - group.network
+      - group.travis
+      - group.energy
+      - group.temperature
+      - group.alarms
+      - group.doors
+      - group.switches
+      - group.lights_switches
+      
 weather:
   name: Lisbon
   entities:
@@ -19,15 +35,6 @@ travels:
   entities:
     - sensor.waze_travel_time
     - sensor.waze_travel_time_2
-
-info:
-  name: Info
-  entities:
-    - sun.sun
-    - sensor.yweather_current
-    - sensor.yweather_temperature
-    - sensor.yweather_temperature_max
-    - sensor.yweather_temperature_min
 
 network:
   name: Network
