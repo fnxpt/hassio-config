@@ -27,7 +27,7 @@ media_view:
 
 other_view:
   view: yes
-  icon: video-input-component
+  icon: mdi:video-input-component
   entities:
     - group.temperature
     - group.humidity
