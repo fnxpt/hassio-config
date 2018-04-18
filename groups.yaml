@@ -10,10 +10,7 @@ default_view:
       - group.network
       - group.travis
       - group.energy
-      - group.temperature
-      - group.alarms
-      - group.doors
-      - group.switches
+
 
 
 lights_view:
@@ -27,6 +24,18 @@ media_view:
   icon: mdi:television
   entities:
     - group.lights_switches
+
+other_view:
+  view: yes
+  icon: video-input-component
+  entities:
+    - group.temperature
+    - group.humidity
+    - group.pressure
+    - group.alarms
+    - group.doors
+    - group.switches
+    - group.batteries_status
 
 weather:
   name: Lisbon

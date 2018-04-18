@@ -5,7 +5,7 @@ homeassistant:
       show_last_changed: true
 
 group:
-  Batteries Status:
+  batteries_status:
     name: Batteries
     control: hidden
     entities:
