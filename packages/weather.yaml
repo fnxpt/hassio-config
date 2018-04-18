@@ -1,3 +1,6 @@
+input_boolean:
+  weather:
+
 weather:
   - platform: yweather
     woeid: 742676

@@ -1,3 +1,8 @@
+weather:
+  name: Lisbon
+  entities:
+    - input_boolean.weather
+
 family:
   name: Family
   entities:

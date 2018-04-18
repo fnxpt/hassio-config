@@ -24,12 +24,17 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 frontend:
+  extra_html_url:
+    - /local/custom_ui/custom-weather-card.html
+  extra_html_url_es5:
+    - /local/custom_ui/custom-weather-card.html
 config:
 updater:
 discovery:
 conversation:
 history:
 logbook:
+sun:
 ios:
 #cloud: !include cloud.yaml
 wake_on_lan: # enables `wake_on_lan` domain
