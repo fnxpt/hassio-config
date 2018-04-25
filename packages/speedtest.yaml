@@ -4,4 +4,9 @@ sensor:
       - ping
       - download
       - upload
-    hour: 30
+    minute: 30
+    hour:
+      - 0
+      - 6
+      - 12
+      - 18
