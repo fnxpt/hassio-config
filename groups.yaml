@@ -26,7 +26,7 @@ media_view:
     - media_player.panasonic_viera_tv
     - media_player.apple_tv
     - media_player.lg_webos_smart_tv
-    
+
 other_view:
   view: yes
   icon: mdi:video-input-component
@@ -70,6 +70,9 @@ network:
   name: Network
   icon: mdi:network
   entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
     - sensor.pihole_domains_blocked
     - sensor.pihole_dns_queries_today
     - sensor.pihole_ads_blocked_today
