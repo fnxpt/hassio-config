@@ -202,7 +202,7 @@
       to: 'off'
   action:
     - service: script.toggle_felipe_tv
-    - delay: 0:20
+    - delay: '00:00:20'
     - service: script.change_felipe_tv_23
 
 - alias: 'Bedtime Felipe'
