@@ -1,0 +1,6 @@
+scripts_view:
+  view: yes
+  icon: mdi:home-automation
+  entities:
+    - group.all_automations
+    - group.all_scripts
