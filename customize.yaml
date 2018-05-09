@@ -155,6 +155,8 @@ sensor.fnxpttradetest_last_build_state:
 sensor.myipopendnscom:
   friendly_name: External IP
 group.all_automations:
+  friendly_name: Automations
   hidden: false
 group.all_scripts:
+  friendly_name: Scripts
   hidden: false
