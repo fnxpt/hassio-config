@@ -17,7 +17,7 @@ binary_sensor.switch_158d0001a6751a:
 binary_sensor.switch_158d0001b8f8e9:
   friendly_name: Felipe Toilet Switch
 binary_sensor.switch_158d0001b8f98c:
-  friendly_name: X2 Switch
+  friendly_name: Bedroom Switch
 sensor.temperature_158d0001d6be0a:
   friendly_name: Temperature Living Room
   homebridge_visible: true
@@ -104,52 +104,42 @@ sensor.yweather_temperature_min:
   friendly_name: Temperature (min)
 switch.wall_switch_left_158d0001715418:
   friendly_name: Wall Switch Kitchen (Left)
-  alexa_name: Kitchen Light
   homebridge_visible: true
   homebridge_name: Kitchen Light
 switch.wall_switch_right_158d0001715418:
   friendly_name: Wall Switch Kitchen (Right)
-  alexa_name: Kitchen Light
   homebridge_visible: true
   homebridge_name: Kitchen Light
 switch.wall_switch_left_158d0001715478:
   friendly_name: Wall Switch Bedroom (Left)
-  alexa_name: Bedroom Light
   homebridge_visible: true
   homebridge_name: Light
 switch.wall_switch_left_158d000171543b:
   friendly_name: Wall Switch Toilet (Left)
-  alexa_name: Toilet Mirror
   homebridge_visible: true
   homebridge_name: Toilet Mirror
 switch.wall_switch_right_158d000171543b:
   friendly_name: Wall Switch Toilet (Right)
-  alexa_name: Toilet Light
   homebridge_visible: true
   homebridge_name: Toilet Light
 switch.wall_switch_left_158d0001660c72:
   friendly_name: Wall Switch Living Room (Left)
-  alexa_name: Living Room LED
   homebridge_visible: true
   homebridge_name: Living Room LED
 switch.wall_switch_right_158d0001660c72:
   friendly_name: Wall Switch Living Room (Right)
-  alexa_name: Living Room Light
   homebridge_visible: true
   homebridge_name: Living Room Light
 switch.wall_switch_right_158d0001715478:
   friendly_name: Wall Switch Bedroom (Right)
-  alexa_name: Bedroom LED
   homebridge_visible: true
   homebridge_name: LED
 switch.wall_switch_left_158d0001a659ee:
   friendly_name: Wall Switch Felipe (Left)
 switch.wall_switch_right_158d0001a659ee:
   friendly_name: Wall Switch Felipe (Right)
-  alexa_name: Felipe's Light
 switch.wall_switch_left_158d0001a659d6:
   friendly_name: Wall Switch Hall (Left)
-  alexa_name: Hall Light
 switch.wall_switch_right_158d0001a659d6:
   friendly_name: Wall Switch Hall (Right)
 sensor.waze_travel_time:
