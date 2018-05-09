@@ -1,0 +1,69 @@
+default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.weather
+      - group.weather_amsterdam
+      - group.family
+      - group.guests
+      - group.travels
+      - group.network
+      - group.travis
+      - group.energy
+
+weather:
+  name: Lisbon
+  entities:
+    - input_boolean.weather
+
+weather_amsterdam:
+  name: Amsterdam
+  entities:
+    - input_boolean.weather_amsterdam
+
+family:
+  name: Family
+  entities:
+    - device_tracker.marlonsiphonelocal
+    - device_tracker.iphonedcquelinelocal
+
+guests:
+  name: Guests
+  entities:
+    - device_tracker.iphonedeelzalocal
+
+travels:
+  name: Travels
+  entities:
+    - sensor.waze_travel_time
+    - sensor.waze_travel_time_2
+
+network:
+  name: Network
+  icon: mdi:network
+  entities:
+    - sensor.myipopendnscom
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.pihole_domains_blocked
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_ads_blocked_today
+
+travis:
+  name: Builds
+  icon: mdi:network
+  entities:
+    - sensor.fnxptopenweathertest_last_build_state
+    - sensor.fnxptcitiestest_last_build_state
+    - sensor.fnxpttradetest_last_build_state
+
+energy:
+  name: Energy
+  icon: mdi:flash
+  entities:
+    - sensor.house
+    - sensor.mateus_bedroom
+    - sensor.hoven
+    - sensor.fridge
+    - sensor.bench

@@ -33,9 +33,9 @@ http:
   ssl_key: /ssl/privkey.pem
 
 #zone: !include zones.yaml
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+group: !include_dir_merge_named groups
 frontend:
   extra_html_url:
     - /local/custom_ui/custom-weather-card.html

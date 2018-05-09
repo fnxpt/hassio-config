@@ -1,0 +1,60 @@
+lights_view:
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+    - group.lights_hall
+    - group.lights_living_room
+    - group.lights_bedroom
+    - group.lights_mateus_bedroom
+    - group.lights_felipe_bedroom
+    - group.lights_kitchen
+    - group.lights_toilet
+
+lights_hall:
+  name: Hall
+  entities:
+    - sensor.illumination_34ce00fa67c5
+    - sensor.illumination_158d0001a3e334
+    - light.gateway_light_hall
+    - binary_sensor.motion_sensor_158d0001a3e334
+    - switch.wall_switch_left_158d0001a659d6
+    - switch.wall_switch_right_158d0001a659d6
+
+lights_living_room:
+  name: Living Room
+  entities:
+    #- light.living_room_led
+    - switch.wall_switch_left_158d0001660c72
+    - switch.wall_switch_right_158d0001660c72
+
+lights_bedroom:
+  name: Bedroom
+  entities:
+    - switch.wall_switch_left_158d0001715478
+    #- light.bedroom_led
+    - switch.wall_switch_right_158d0001715478
+
+lights_mateus_bedroom:
+  name: Mateus Bedroom
+  entities:
+    #- switch.wall_switch_left_158d000171558d
+    #- switch.wall_switch_right_158d000171558d
+    #- light.mateus_bedroom_led
+
+lights_felipe_bedroom:
+  name: Felipe Bedroom
+  entities:
+    - switch.wall_switch_left_158d0001a659ee
+    - switch.wall_switch_right_158d0001a659ee
+
+lights_kitchen:
+  name: Kitchen
+  entities:
+    - switch.wall_switch_left_158d0001715418
+    - switch.wall_switch_right_158d0001715418
+
+lights_toilet:
+  name: Toilet
+  entities:
+    - switch.wall_switch_left_158d000171543b
+    - switch.wall_switch_right_158d000171543b

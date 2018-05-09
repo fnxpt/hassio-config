@@ -1,0 +1,9 @@
+media_view:
+  view: yes
+  icon: mdi:television
+  entities:
+    - media_player.samsung_ue42f5500
+    - media_player.mediaroom_none
+    - media_player.panasonic_viera_tv
+    - media_player.apple_tv
+    - media_player.lg_webos_smart_tv

@@ -1,0 +1,58 @@
+other_view:
+  view: yes
+  icon: mdi:video-input-component
+  entities:
+    - group.temperature
+    - group.humidity
+    - group.pressure
+    - group.alarms
+    - group.doors
+    - group.switches
+    - group.batteries_status
+
+temperature:
+  name: Temperature
+  icon: mdi:temperature-celsius
+  entities:
+    - sensor.temperature_158d0001d6be0a
+    - sensor.temperature_158d0001d6f89d
+    - sensor.temperature_158d0001d36a4d
+    - sensor.temperature_158d0001d36ac7
+
+humidity:
+  name: Humidity
+  icon: mdi:water-percent
+  entities:
+    - sensor.humidity_158d0001d6be0a
+    - sensor.humidity_158d0001d6f89d
+    - sensor.humidity_158d0001d36a4d
+    - sensor.humidity_158d0001d36ac7
+
+pressure:
+  name: Pressure
+  entities:
+    - sensor.pressure_158d0001d6be0a
+    - sensor.pressure_158d0001d6f89d
+    - sensor.pressure_158d0001d36a4d
+    - sensor.pressure_158d0001d36ac7
+
+alarms:
+  name: Alarms
+  icon: mdi:alarm
+  entities:
+    - binary_sensor.smoke_sensor_158d0001d84137
+
+doors:
+  name: Doors
+  icon: mdi:door
+  entities:
+    - binary_sensor.door_window_sensor_158d0001ab3ef9
+    - binary_sensor.door_window_sensor_158d0001ab6e05
+    - binary_sensor.door_window_sensor_158d0001b7b043
+
+switches:
+  name: Switches
+  entities:
+    - binary_sensor.switch_158d0001a6751a
+    - binary_sensor.switch_158d0001b8f8e9
+    - binary_sensor.switch_158d0001b8f98c
