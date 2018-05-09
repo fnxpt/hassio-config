@@ -15,8 +15,8 @@ lights_hall:
   entities:
     - sensor.illumination_34ce00fa67c5
     - sensor.illumination_158d0001a3e334
-    - light.gateway_light_hall
     - binary_sensor.motion_sensor_158d0001a3e334
+    - light.gateway_light_34ce00fa67c5
     - switch.wall_switch_left_158d0001a659d6
     - switch.wall_switch_right_158d0001a659d6
 
