@@ -162,3 +162,5 @@ sensor.fnxptopenweathertest_last_build_state:
   friendly_name: OpenWeather Sample
 sensor.fnxpttradetest_last_build_state:
   friendly_name: Trade Sample
+sensor.myipopendnscom:
+  friendly_name: External IP
