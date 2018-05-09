@@ -1,0 +1,23 @@
+- alias: 'Bedtime Felipe'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  action:
+    - service: script.change_felipe_tv_5
+
+- alias: 'Bedtime Mateus'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  action:
+    - service: script.change_mateus_tv_volume
+    - service: notify.lg_webos_smart_tv
+      data:
+          message: !secret bedtime_message
+
+- alias: 'Bedtime Mateus 2'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  action:
+    - service: script.turn_off_mateus_tv

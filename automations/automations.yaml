@@ -32,74 +32,6 @@
       data:
         entity_id: light.gateway_light_34ce00fa67c5
 
-- alias: 'Alarm triggered'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
-    from: 'off'
-    to: 'on'
-  condition:
-    - condition: state
-      entity_id: group.all_devices
-      state: 'not_home'
-  action:
-    - service: notify.family
-      data:
-        title: "Security"
-        message: "Alarm triggered you are being robbed"
-    - service: xiaomi_aqara.play_ringtone
-      data:
-        gw_mac: 34ce00fa67c5
-        ringtone_id: 0
-        ringtone_vol: 8
-
-- alias: 'Toggle Lights from switch'
-  trigger:
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001a6751a
-      click_type: single
-  action:
-    - service: switch.toggle
-      entity_id: switch.wall_switch_right_158d0001715418
-
-- alias: 'Turn TV off'
-  trigger:
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001a6751a
-      click_type: double
-  action:
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.lg_webos_smart_tv
-
-- alias: 'Toggle toilet light'
-  trigger:
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001b8f98c
-      click_type: single
-  action:
-    - service: switch.toggle
-      entity_id: switch.wall_switch_right_158d000171543b
-
-- alias: 'Toggle Lights from switch'
-  trigger:
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001b8f8e9
-      click_type: single
-  action:
-    - service: notify.family
-      data:
-        title: "Security"
-        message: "Button 2"
-
 - alias: 'Fire Notification'
   trigger:
     platform: state
@@ -205,29 +137,6 @@
     - delay: '00:00:20'
     - service: script.change_felipe_tv_23
 
-- alias: 'Bedtime Felipe'
-  trigger:
-    platform: time
-    at: '21:30:00'
-  action:
-    - service: script.change_felipe_tv_5
-
-- alias: 'Bedtime Mateus'
-  trigger:
-    platform: time
-    at: '21:30:00'
-  action:
-    - service: script.change_mateus_tv_volume
-    - service: notify.lg_webos_smart_tv
-      data:
-          message: !secret bedtime_message
-
-- alias: 'Bedtime Mateus 2'
-  trigger:
-    platform: time
-    at: '22:00:00'
-  action:
-    - service: script.turn_off_mateus_tv
 
 - alias: 'Store room light toggle'
   trigger:
@@ -243,22 +152,17 @@
     - service: switch.toggle
       entity_id: switch.wall_switch_right_158d0001715418
 
-- alias: 'Create daily snapshot'
-  trigger:
-    platform: time
-    at: '00:00:00'
-  action:
-    - service: hassio.snapshot_full
-      data_template:
-        name: Automated Backup {{ now().strftime('%Y-%m-%d') }}
 
-- alias: 'Backup snapshots'
+
+- alias: "New Device Connected"
   trigger:
-    platform: time
-    at: '00:30:00'
+    - platform: event
+      event_type: device_tracker_new_device
   action:
-    - service: hassio.addon_stdin
+    - service: script.janet_speech_engine
       data:
-        addon: 7be23ff5_dropbox_sync
-        input:
-            command: upload
+        call_greeting: 1
+        call_new_device: 1
+      data_template:
+        person: >-
+          {{ trigger.event.data.name }}
