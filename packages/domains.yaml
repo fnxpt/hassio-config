@@ -1,0 +1,5 @@
+sensor:
+  - platform: domain_expiry
+    domain: fnx.pt
+  - platform: domain_expiry
+    domain: fenixorg.com
