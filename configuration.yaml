@@ -48,7 +48,21 @@ conversation:
 history:
 logbook:
 sun:
-
+ios:
+  push:
+    categories:
+      - name: Alarm
+        identifier: 'house_alarm'
+        actions:
+          - identifier: 'SILENCE_HOUSE_ALARM'
+            title: 'Silence Alarm'
+            authenticationRequired: yes
+      - name: Fire Alarm
+        identifier: 'fire_alarm'
+        actions:
+          - identifier: 'SILENCE_FIRE_ALARM'
+            title: 'Silence Alarm'
+            
 #cloud: !include cloud.yaml
 wake_on_lan: # enables `wake_on_lan` domain
 
