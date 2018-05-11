@@ -1,0 +1,21 @@
+automation:
+  - alias: Disable house alarm
+    trigger:
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: SILENCE_HOUSE_ALARM
+    action:
+      - service: script.deactivate_house_alarm
+  - alias: Disable fire alarm
+    trigger:
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: SILENCE_FIRE_ALARM
+    action:
+      - service: notify.family
+        data:
+          title: "Security"
+          message: "Alarm triggered you are being robbed"
+      # - service: script.deactivate_fire_alarm

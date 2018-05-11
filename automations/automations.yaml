@@ -39,10 +39,7 @@
     from: 'off'
     to: 'on'
   action:
-    - service: notify.family
-      data:
-        title: "Fire"
-        message: "Fire, fire, fire"
+    - service: script.activate_fire_alarm
 
 - alias: 'Alert door open'
   trigger:

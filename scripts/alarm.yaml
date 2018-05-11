@@ -1,0 +1,46 @@
+activate_house_alarm:
+  alias: Activate house alarm
+  sequence:
+    - service: notify.family
+      data:
+        title: "Security"
+        message: "Alarm triggered you are being robbed"
+        push:
+          category: "house_alarm" # Needs to match the top level identifier you used in the ios configuration
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: 34ce00fa67c5
+        ringtone_id: 0
+        ringtone_vol: 20
+    - service: switch.turn_on
+      entity_id: switch.wall_switch_right_158d0001715478
+    - service: switch.turn_on
+      entity_id: switch.wall_switch_left_158d0001660c72
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_led
+        effect: red_strobe
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom_led
+        effect: red_strobe
+
+deactivate_house_alarm:
+  alias: Deactivate house alarm
+  sequence:
+    - service: xiaomi_aqara.stop_ringtone
+      data:
+        gw_mac: 34ce00fa67c5
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d0001715478
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_left_158d0001660c72
+    # Maybe we should change it to white
+    # - service: light.turn_on
+    #   data:
+    #     entity_id: light.living_room_led
+    #     effect: red_strobe
+    # - service: light.turn_on
+    #   data:
+    #     entity_id: light.bedroom_led
+    #     effect: red_strobe
