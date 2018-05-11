@@ -42,6 +42,8 @@ network:
   name: Network
   icon: mdi:network
   entities:
+    - sensor.domain_expiry
+    - sensor.domain_expiry_2
     - sensor.myipopendnscom
     - sensor.speedtest_download
     - sensor.speedtest_upload

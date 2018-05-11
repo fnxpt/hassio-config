@@ -160,3 +160,7 @@ group.all_automations:
 group.all_scripts:
   friendly_name: Scripts
   hidden: false
+sensor.domain_expiry:
+  friendly_name: fnx.pt
+sensor.domain_expiry_2:
+  friendly_name: fenixorg.com
