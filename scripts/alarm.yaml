@@ -5,8 +5,9 @@ activate_house_alarm:
       data:
         title: "Security"
         message: "Alarm triggered you are being robbed"
-        push:
-          category: "house_alarm" # Needs to match the top level identifier you used in the ios configuration
+        data:
+          push:
+            category: "house_alarm" # Needs to match the top level identifier you used in the ios configuration
     - service: xiaomi_aqara.play_ringtone
       data:
         gw_mac: 34ce00fa67c5

@@ -5,8 +5,9 @@ activate_fire_alarm:
       data:
         title: "Fire"
         message: "Fire, fire, fire"
-        push:
-          category: "fire_alarm" # Needs to match the top level identifier you used in the ios configuration
+        data:
+          push:
+            category: "fire_alarm" # Needs to match the top level identifier you used in the ios configuration
 
 deactivate_fire_alarm:
   alias: Deactivate fire alarm
