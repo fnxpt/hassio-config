@@ -37,8 +37,8 @@ lights_bedroom:
 lights_mateus_bedroom:
   name: Mateus Bedroom
   entities:
-    #- switch.wall_switch_left_158d000171558d
-    #- switch.wall_switch_right_158d000171558d
+    - switch.wall_switch_left_158d000171558d
+    - switch.wall_switch_right_158d000171558d
     #- light.mateus_bedroom_led
 
 lights_felipe_bedroom:
