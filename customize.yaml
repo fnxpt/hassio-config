@@ -142,6 +142,10 @@ switch.wall_switch_left_158d0001a659d6:
   friendly_name: Wall Switch Hall (Left)
 switch.wall_switch_right_158d0001a659d6:
   friendly_name: Wall Switch Hall (Right)
+switch.wall_switch_left_158d000171558d:
+  friendly_name: Wall Switch Mateus (Left)
+switch.wall_switch_right_158d000171558d:
+  friendly_name: Wall Switch Mateus (Right)
 sensor.waze_travel_time:
     friendly_name: Work
 sensor.waze_travel_time_2:

@@ -8,7 +8,7 @@
       click_type: single
   action:
     - service: switch.toggle
-      entity_id: switch.wall_switch_right_158d0001715418
+      entity_id: switch.wall_switch_right_158d000171558d
 
 - alias: 'Turn TV off'
   trigger:
