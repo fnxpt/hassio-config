@@ -40,6 +40,7 @@ lights_mateus_bedroom:
     - switch.wall_switch_left_158d000171558d
     - switch.wall_switch_right_158d000171558d
     #- light.mateus_bedroom_led
+    - switch.wall_switch_158d00022e91e5
 
 lights_felipe_bedroom:
   name: Felipe Bedroom

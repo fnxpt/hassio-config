@@ -149,7 +149,15 @@
     - service: switch.toggle
       entity_id: switch.wall_switch_right_158d0001715418
 
-
+- alias: 'Balcony light turn off'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab6e05
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_158d00022e91e5
 
 - alias: "New Device Connected"
   trigger:
