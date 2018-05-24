@@ -23,7 +23,7 @@ lights_hall:
 lights_living_room:
   name: Living Room
   entities:
-    #- light.living_room_led
+    - light.living_room_led
     - switch.wall_switch_left_158d0001660c72
     - switch.wall_switch_right_158d0001660c72
 
@@ -31,7 +31,7 @@ lights_bedroom:
   name: Bedroom
   entities:
     - switch.wall_switch_left_158d0001715478
-    #- light.bedroom_led
+    - light.bedroom_led
     - switch.wall_switch_right_158d0001715478
 
 lights_mateus_bedroom:
@@ -39,7 +39,7 @@ lights_mateus_bedroom:
   entities:
     - switch.wall_switch_left_158d000171558d
     - switch.wall_switch_right_158d000171558d
-    #- light.mateus_bedroom_led
+    - light.mateus_bedroom_led
     - switch.wall_switch_158d00022e91e5
 
 lights_felipe_bedroom:
