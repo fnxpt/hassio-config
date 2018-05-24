@@ -7,8 +7,8 @@ weather:
     woeid: 742676
   - platform: buienradar
     name: Amsterdam
-    latitude: 52.379189 # !secret amsterdam_home_latitude
-    longitude: 4.899431 # !secret amsterdam_home_longitude
+    latitude: !secret amsterdam_home_latitude
+    longitude: !secret amsterdam_home_longitude
     forecast: True
 
 sensor:
