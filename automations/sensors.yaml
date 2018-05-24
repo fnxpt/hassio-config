@@ -1,0 +1,66 @@
+- alias: 'Store room light turn on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001b7b043
+      from: 'off'
+      to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.wall_switch_right_158d0001715418
+
+- alias: 'Store room light turn off'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001b7b043
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d0001715418
+
+- alias: 'Balcony light turn off'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab6e05
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_158d00022e91e5
+
+- alias: 'Alert door open'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  action:
+    - service: notify.family
+      data:
+        title: "Door opened"
+        message: "You left entrance door opened"
+
+- alias: 'Turn off outside lamp'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: switch.wall_switch_right_158d0001a659d6
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  condition:
+    - condition: state
+      entity_id: binary_sensor.door_window_sensor_158d0001ab3ef9
+      state: 'off'
+    - condition: state
+      entity_id: switch.wall_switch_right_158d0001a659d6
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d0001a659d6
