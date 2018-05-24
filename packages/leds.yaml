@@ -1,0 +1,12 @@
+light:
+  - platform: flux_led
+    devices:
+      10.2.250.30:
+        name: living_room_led
+        mode: "rgbw"
+      10.2.250.31:
+        name: bedroom_led
+        mode: "rgbw"
+      10.2.250.32:
+        name: mateus_bedroom_led
+        mode: "rgb"

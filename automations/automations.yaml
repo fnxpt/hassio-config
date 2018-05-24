@@ -82,21 +82,6 @@
   action:
     - service: script.turn_off_fireplace
 
-- alias: 'Toggle Felipe Tv'
-  trigger:
-    - platform: state
-      entity_id: switch.wall_switch_left_158d0001a659ee
-      from: 'off'
-      to: 'on'
-    - platform: state
-      entity_id: switch.wall_switch_left_158d0001a659ee
-      from: 'on'
-      to: 'off'
-  action:
-    - service: script.toggle_felipe_tv
-    - delay: '00:00:20'
-    - service: script.change_felipe_tv_23
-
 - alias: "New Device Connected"
   trigger:
     - platform: event
