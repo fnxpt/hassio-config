@@ -10,18 +10,38 @@
     - service: switch.toggle
       entity_id: switch.wall_switch_right_158d000171558d
 
-- alias: 'Toggle LED'
+- alias: 'Toggle on LED'
   trigger:
     platform: event
     event_type: click
     event_data:
       entity_id: binary_sensor.switch_158d0001a6751a
       click_type: double
+  condition:
+    - condition: state
+      entity_id: light.mateus_bedroom_led
+      state: 'off'
   action:
-    - service: light.toggle
+    - service: light.turn_on
       data:
         entity_id: light.mateus_bedroom_led
-        rgb_color: [255, 255, 255]
+        color_name: white
+
+- alias: 'Toggle off LED'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a6751a
+      click_type: double
+  condition:
+    - condition: state
+      entity_id: light.mateus_bedroom_led
+      state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.mateus_bedroom_led
 
 #binary_sensor.switch_158d0001b8f98c
 - alias: 'Toggle toilet light'
@@ -87,7 +107,7 @@
     - service: light.turn_on
       data:
         entity_id: light.bedroom_led
-        rgb_color: [255, 0, 0]
+        color_name: red
 
 - alias: 'Disable Special time'
   trigger:
@@ -104,6 +124,6 @@
     - service: light.turn_on
       data:
         entity_id: light.bedroom_led
-        rgb_color: [255, 255, 255]
+        color_name: white
     - service: switch.turn_off
       entity_id: switch.wall_switch_right_158d0001715478
