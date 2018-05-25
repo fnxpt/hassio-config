@@ -13,16 +13,22 @@
     - delay: '00:00:20'
     - service: script.change_felipe_tv_23
 
-- alias: 'Toggle Mateus LED'
+- alias: 'Turn off Mateus LED'
   trigger:
     - platform: state
       entity_id: switch.wall_switch_left_158d000171558d
       from: 'off'
       to: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.mateus_bedroom_led
+
+- alias: 'Turn on Mateus LED'
+  trigger:
     - platform: state
       entity_id: switch.wall_switch_left_158d000171558d
       from: 'on'
       to: 'off'
   action:
-    - service: light.toggle
+    - service: light.turn_on
       entity_id: light.mateus_bedroom_led
