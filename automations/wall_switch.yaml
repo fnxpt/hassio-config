@@ -1,7 +1,7 @@
 - alias: 'Toggle Felipe Tv'
   trigger:
     - platform: state
-      entity_id: switch.wall_switch_left_158d000171558d
+      entity_id: switch.wall_switch_left_158d0001a659ee
       from: 'off'
       to: 'on'
     - platform: state
@@ -16,11 +16,11 @@
 - alias: 'Toggle Mateus LED'
   trigger:
     - platform: state
-      entity_id: switch.wall_switch_left_158d0001a659ee
+      entity_id: switch.wall_switch_left_158d000171558d
       from: 'off'
       to: 'on'
     - platform: state
-      entity_id: switch.wall_switch_left_158d0001a659ee
+      entity_id: switch.wall_switch_left_158d000171558d
       from: 'on'
       to: 'off'
   action:
