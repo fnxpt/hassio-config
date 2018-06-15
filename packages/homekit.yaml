@@ -1,1 +1,14 @@
 homekit:
+  filter:
+    include_domains:
+      - binary_sensor
+      - light
+      - media_player
+      - sensor
+      - switch
+    exclude_entities:
+      - sensor.br_temperature
+      - sensor.br_humidity
+      - sensor.yweather_temperature
+      - sensor.yweather_temperature_max
+      - sensor.yweather_temperature_min
